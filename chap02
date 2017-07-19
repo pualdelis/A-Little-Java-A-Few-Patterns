@@ -1,0 +1,27 @@
+abstract class PointD{
+    abstract int distanceTo0();
+}
+
+class CartesianPt extends PointD{ //笛卡尔坐标
+    int x;
+    int y;
+    CartesianPt(int _x, int _y){
+        x = _x;
+        y = _y;
+    }
+    int distanceTo0(){
+        return (int)Math.sqrt(x * x + y * y);
+    }
+}
+
+class ManhattanPt extends PointD{ //曼哈顿坐标
+    int x;
+    int y;
+    ManhattanPt(int _x, int _y){
+        x = _x;
+        y = _y;
+    }
+    int distanceTo0(){
+        return x + y;
+    }
+}
